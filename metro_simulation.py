@@ -1,12 +1,21 @@
 from collections import defaultdict, deque
 import heapq
 from typing import Dict, List, Set, Tuple, Optional
+<<<<<<< HEAD
+=======
+import math
+>>>>>>> c274061 (update)
 
 class Istasyon:
     def __init__(self, idx: str, ad: str, hat: str):
         self.idx = idx
         self.ad = ad
         self.hat = hat
+<<<<<<< HEAD
+=======
+        self.x = 0  # X koordinatı (tahmini maliyet için kullanılıyor)
+        self.y = 0  # Y koordinatı 
+>>>>>>> c274061 (update)
         self.komsular: List[Tuple['Istasyon', int]] = []  # (istasyon, süre) tuple'ları
 
     def komsu_ekle(self, istasyon: 'Istasyon', sure: int):
@@ -64,7 +73,11 @@ class MetroAgi:
         ziyaret_edildi = set()
 
         def h_skor(dugum, hedef):
+<<<<<<< HEAD
             return 0
+=======
+            return math.sqrt((dugum.x - hedef.x) ** 2 + (dugum.y - hedef.y) ** 2)
+>>>>>>> c274061 (update)
 
         pq = [(0, id(baslangic), baslangic, [baslangic])]  
         g_skor = {dugum: float('inf') for dugum in self.istasyonlar.values()}
@@ -175,4 +188,10 @@ if __name__ == "__main__":
     sonuc = metro.en_hizli_rota_bul("T7", "M1")
     if sonuc:
         rota, sure = sonuc
+<<<<<<< HEAD
         print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota)) 
+=======
+        print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota)) 
+
+        
+>>>>>>> c274061 (update)
